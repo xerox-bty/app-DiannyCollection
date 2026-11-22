@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Warna Utama (Brand & Background) -->
+    <color name="primary_dark">#2C221E</color>          <!-- Header Login, Card Utama, Tombol Utama, Bottom Nav -->
+    <color name="primary_dark_variant">#3A2E29</color>  <!-- Container Gelap (Live Quick Keep Card) -->
+    <color name="accent_gold">#B88E5A</color>           <!-- Tombol Mulai Catat, FAB (+), Grafik Laporan -->
+    <color name="accent_gold_light">#D9C2A3</color>     <!-- Bar Grafik Sekunder & Aksen Halus -->
+
+    <!-- Warna Latar & Permukaan (Background & Surface) -->
+    <color name="bg_cream">#F6F2EC</color>              <!-- Background Utama Layar -->
+    <color name="surface_white">#FFFFFF</color>         <!-- Card Produk, Input Field, Card Statistik -->
+    <color name="surface_beige">#EBE3D9</color>         <!-- Chip Tidak Aktif, Box Pratinjau WA, Avatar Bg -->
+    <color name="divider_stroke">#D8CFC4</color>        <!-- Garis Batas (Border) Input & Card -->
+
+    <!-- Warna Teks (Typography) -->
+    <color name="text_primary">#2C221E</color>          <!-- Judul & Teks Utama Gelap -->
+    <color name="text_secondary">#7A6F67</color>        <!-- Subjudul, Label Input, Kategori -->
+    <color name="text_hint">#A89F97</color>             <!-- Placeholder Input & Teks Nonaktif -->
+    <color name="text_on_dark">#F6F2EC</color>          <!-- Teks di atas Card/Tombol Gelap -->
+    <color name="text_gold">#C9A26B</color>             <!-- Teks Aksen di atas Card Gelap -->
+
+    <!-- Warna Status & Indikator (Badges & Alerts) -->
+    <!-- Merah: Live, Habis, Stok Menipis, Tombol Keluar -->
+    <color name="status_red">#C84B3A</color>
+    <color name="status_red_bg">#F7E4E1</color>
+    <color name="btn_logout_bg">#E9C6C2</color>
+
+    <!-- Hijau: Aman, Terkonfirmasi, Draft Tersimpan -->
+    <color name="status_green">#2E7D5B</color>
+    <color name="status_green_bg">#E4F2EB</color>
+
+    <!-- Kuning/Oranye: Menunggu, Sisa Stok Sedikit -->
+    <color name="status_warning">#B87D24</color>
+    <color name="status_warning_bg">#FDF3E3</color>
+
+    <!-- Biru: Siap Dicek -->
+    <color name="status_blue">#2B6CB0</color>
+    <color name="status_blue_bg">#E6F0FA</color>
+
+    <!-- Warna Sampel Varian Produk (Swatches) -->
+    <color name="swatch_maroon">#6B2D2B</color>
+    <color name="swatch_black">#22201E</color>
+    <color name="swatch_cream">#E8DCCB</color>
+
+    <color name="thumb_maroon">#9E5B50</color>
+    <color name="thumb_purple">#8B6875</color>
+    <color name="thumb_gold">#B69362</color>
+    <color name="thumb_beige">#C8B9AA</color>
+</resources>

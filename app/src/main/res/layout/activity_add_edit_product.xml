@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_cream"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    tools:context=".AddEditProductActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="32dp"
+        android:paddingBottom="28dp">
+
+        <!-- TOMBOL KEMBALI (<) -->
+        <TextView
+            android:id="@+id/btnBackAddProduct"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:background="@drawable/bg_pill_badge"
+            android:backgroundTint="@color/surface_white"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:outlineProvider="none"
+            android:text="‹"
+            android:textColor="@color/text_primary"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- JUDUL HALAMAN: TAMBAH PRODUK -->
+        <TextView
+            android:id="@+id/tvTitleAddProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="Tambah Produk"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/btnBackAddProduct"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBackAddProduct" />
+
+        <!-- KOTAK UNGGAH FOTO (GARIS PUTUS-PUTUS) -->
+        <LinearLayout
+            android:id="@+id/boxUploadPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_dashed_box"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/btnBackAddProduct">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="Tambah Foto"
+                android:src="@android:drawable/ic_menu_camera"
+                app:tint="@color/text_secondary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Ketuk untuk menambah foto"
+                android:textColor="@color/text_hint"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- LABEL NAMA PRODUK -->
+        <TextView
+            android:id="@+id/tvLabelProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Nama produk"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/boxUploadPhoto" />
+
+        <!-- INPUT NAMA PRODUK -->
+        <EditText
+            android:id="@+id/etProductName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_input_live"
+            android:hint="Masukkan nama produk"
+            android:importantForAutofill="no"
+            android:inputType="textCapWords"
+            android:paddingHorizontal="16dp"
+            android:text="Kebaya Brokat Marun"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_hint"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/tvLabelProductName" />
+
+        <!-- BARIS 2 KOLOM: KODE SKU & KATEGORI -->
+        <LinearLayout
+            android:id="@+id/rowSkuCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/etProductName">
+
+            <!-- Kolom Kiri: Kode SKU -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="7dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kode SKU"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/etProductSku"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/bg_input_live"
+                    android:hint="KBY-001"
+                    android:importantForAutofill="no"
+                    android:inputType="textCapCharacters"
+                    android:paddingHorizontal="16dp"
+                    android:text="KBY-014"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Kolom Kanan: Kategori (Dropdown) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kategori"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:id="@+id/spinnerCategoryBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/bg_input_live"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp">
+
+                    <TextView
+                        android:id="@+id/tvSelectedCategory"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Kebaya"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⌄"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- LABEL WARNA -->
+        <TextView
+            android:id="@+id/tvLabelFormColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Warna"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rowSkuCategory" />
+
+        <!-- PILIHAN SWATCH WARNA + TOMBOL TAMBAH WARNA (+) -->
+        <LinearLayout
+            android:id="@+id/rowColorSwatches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLabelFormColor">
+
+            <!-- Warna 1: Marun (Terpilih dengan Cincin Luar) -->
+            <FrameLayout
+                android:id="@+id/formSwatchMaroon"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:background="@drawable/bg_btn_mode_live"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="3dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_pill_badge"
+                    android:backgroundTint="@color/swatch_maroon" />
+            </FrameLayout>
+
+            <!-- Warna 2: Hitam -->
+            <View
+                android:id="@+id/formSwatchBlack"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/bg_pill_badge"
+                android:backgroundTint="@color/swatch_black"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- Tombol Tambah Warna (+) -->
+            <TextView
+                android:id="@+id/btnAddColorSwatch"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/bg_pill_badge"
+                android:backgroundTint="@color/surface_white"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:outlineProvider="none"
+                android:text="+"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- LABEL UKURAN -->
+        <TextView
+            android:id="@+id/tvLabelFormSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Ukuran"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rowColorSwatches" />
+
+        <!-- PILIHAN TOMBOL UKURAN (S, M, L AKTIF; XL TIDAK AKTIF) -->
+        <LinearLayout
+            android:id="@+id/rowSizeSelector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLabelFormSize">
+
+            <!-- Ukuran S (Aktif) -->
+            <TextView
+                android:id="@+id/formSizeS"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_pill_badge"
+                android:backgroundTint="@color/primary_dark"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:outlineProvider="none"
+                android:text="S"
+                android:textColor="@color/text_on_dark"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- Ukuran M (Aktif) -->
+            <TextView
+                android:id="@+id/formSizeM"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/bg_pill_badge"
+                android:backgroundTint="@color/primary_dark"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:outlineProvider="none"
+                android:text="M"
+                android:textColor="@color/text_on_dark"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- Ukuran L (Aktif) -->
+            <TextView
+                android:id="@+id/formSizeL"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/bg_pill_badge"
+                android:backgroundTint="@color/primary_dark"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:outlineProvider="none"
+                android:text="L"
+                android:textColor="@color/text_on_dark"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- Ukuran XL (Tidak Aktif) -->
+            <TextView
+                android:id="@+id/formSizeXL"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/bg_pill_badge"
+                android:backgroundTint="@color/surface_white"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:outlineProvider="none"
+                android:text="XL"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- BARIS 2 KOLOM: HARGA (RP) & STOK AWAL -->
+        <LinearLayout
+            android:id="@+id/rowPriceStock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/rowSizeSelector">
+
+            <!-- Kolom Kiri: Harga (Rp) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="7dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Harga (Rp)"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/etProductPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/bg_input_live"
+                    android:hint="0"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:paddingHorizontal="16dp"
+                    android:text="185000"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Kolom Kanan: Stok awal -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stok awal"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/etInitialStock"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/bg_input_live"
+                    android:hint="0"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:paddingHorizontal="16dp"
+                    android:text="12"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- TOMBOL SIMPAN PRODUK -->
+        <TextView
+            android:id="@+id/btnSaveProduct"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_pill_badge"
+            android:backgroundTint="@color/primary_dark"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:outlineProvider="none"
+            android:text="Simpan Produk"
+            android:textColor="@color/text_on_dark"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/rowPriceStock" />
+
+        <!-- TOMBOL BATAL -->
+        <TextView
+            android:id="@+id/btnCancelProduct"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_btn_mode_live"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:outlineProvider="none"
+            android:text="Batal"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/btnSaveProduct" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
